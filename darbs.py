@@ -1,5 +1,5 @@
 import os
-import fitz  # PyMuPDF
+import fitz  
 
 def extract_payment_info(text):
     name_pattern = "Vārds uzvārds/ name:"
@@ -41,5 +41,4 @@ def process_payment_files(directory):
             print(f"PAYMENT AMOUNT: {amount}")
             print("\n" + "-"*30 + "\n")
 
-# Specify the directory containing your PDF files
 process_payment_files('/Users/alekssdimins/Desktop/projekts')
