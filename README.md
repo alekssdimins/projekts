@@ -28,19 +28,24 @@ cau
 
 #  koda struktūras skaidrojums
 
-extract_payment_info funkcija:
-Šī funkcija atbild par informācijas ieguvi no teksta, kas tiek padots kā arguments.
-Izmanto trīs meklēšanas paraugus (name_pattern, amount_pattern, un recipient_pattern), lai atrastu vārdu, maksājuma summu un saņēmēja informāciju.
-Izmanto virknes funkciju find() un apstrādā atrastos indeksus, lai izgūtu konkrēto informāciju no teksta.
-Ja informācija tiek atrasta, tā tiek izgūta un attīrīta no liekām atstarpēm (strip() funkcija), un rezultāts tiek atgriezts kā tuple ar trīs vērtībām: vārds, saņēmējs un summa.
-process_payment_files funkcija:
-Šī funkcija atbild par apstrādājamo PDF failu direktorijas norādīšanu un katram failam atbilstošu apstrādes darbību.
-Iterē cauri visiem failiem direktorijā (os.listdir(directory)).
-Ja faila paplašinājums ir '.pdf', tiek veikta apstrāde.
-Atver katru PDF failu (fitz.open(pdf_path)) un iegūst tekstu no katras lapas (page.get_text()).
-Izdrukā informāciju par attiecīgo PDF failu un izgūto tekstu.
-Izmanto extract_payment_info funkciju, lai iegūtu vārdu, saņēmēju un summu no izgūtā teksta.
-Izdrukā iegūto maksājuma informāciju.
-main bloks:
-Pēdējais bloks izsauc process_payment_files funkciju, norādot direktoriju, kur atrodas PDF faili ("/Users/alekssdimins/Desktop/projekts").
-Tas tiek darīts, lai programmu palaistu un uzsāktu maksājumu informācijas apstrādi.
+
+1. **`extract_payment_info` funkcija:**
+   - Šī funkcija atbild par informācijas ieguvi no teksta, kas tiek padots kā arguments.
+   - Izmanto trīs meklēšanas paraugus (`name_pattern`, `amount_pattern`, un `recipient_pattern`), lai atrastu vārdu, maksājuma summu un saņēmēja informāciju.
+   - Izmanto virknes funkciju `find()` un apstrādā atrastos indeksus, lai izgūtu konkrēto informāciju no teksta.
+   - Ja informācija tiek atrasta, tā tiek izgūta un attīrīta no liekām atstarpēm (`strip()` funkcija), un rezultāts tiek atgriezts kā tuple ar trīs vērtībām: vārds, saņēmējs un summa.
+
+2. **`process_payment_files` funkcija:**
+   - Šī funkcija atbild par apstrādājamo PDF failu direktorijas norādīšanu un katram failam atbilstošu apstrādes darbību.
+   - Iterē cauri visiem failiem direktorijā (`os.listdir(directory)`).
+   - Ja faila paplašinājums ir '.pdf', tiek veikta apstrāde.
+   - Atver katru PDF failu (`fitz.open(pdf_path)`) un iegūst tekstu no katras lapas (`page.get_text()`).
+   - Izdrukā informāciju par attiecīgo PDF failu un izgūto tekstu.
+   - Izmanto `extract_payment_info` funkciju, lai iegūtu vārdu, saņēmēju un summu no izgūtā teksta.
+   - Izdrukā iegūto maksājuma informāciju.
+
+3. **`main` bloks:**
+   - Pēdējais bloks izsauc `process_payment_files` funkciju, norādot direktoriju, kur atrodas PDF faili ("/Users/alekssdimins/Desktop/projekts").
+   - Tas tiek darīts, lai programmu palaistu un uzsāktu maksājumu informācijas apstrādi.
+
+
