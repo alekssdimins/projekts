@@ -1,3 +1,5 @@
 # projekts
 
 cau
+
+# izmantotās bibliotēkas
